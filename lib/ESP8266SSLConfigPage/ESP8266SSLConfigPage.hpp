@@ -1,0 +1,2 @@
+// to use SSL a different lib must be used a SEPAsyncWebServer does not officially support it.
+// TODO add an HTTPS version of the configpage to not leak the wifi password to the world through plaintext

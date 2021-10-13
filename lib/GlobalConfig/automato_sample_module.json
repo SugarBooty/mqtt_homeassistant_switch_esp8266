@@ -1,0 +1,29 @@
+
+{
+    "NAME": "Window Module",
+    "DESC": "Controls windows in car",
+    "ADDR": "E6",
+    "SUPPORTED_COMPARISON": ["=="],
+    "COMMANDS": {
+        "Broadcast_Event": {
+            "NAME": "Configure Event",
+            "DESC": "Sends an event upon condition being met",
+            "TYPE": "Broadcast Event",
+            "ARGS": [ "SEND-TO_ADDRESS", "MESSAGE-TO_SEND", "CONDITION" ]
+        },
+        "Get State": {
+            "NAME": "Get Window State",
+            "DESC": "Get the state of the windows",
+            "TYPE": "Get Function",
+            "ARGS": [ "W1", "W2", "W3", "W4" ]          
+        }
+    },
+    "SENSORS": {
+        "WINDOW": {
+            "1": ["UP", "DOWN", "EVENT", "UNKNOWN"],
+            "2": ["UP", "DOWN", "EVENT", "UNKNOWN"],
+            "3": ["UP", "DOWN", "EVENT", "UNKNOWN"],
+            "4": ["UP", "DOWN", "EVENT", "UNKNOWN"]
+        }
+    }
+}

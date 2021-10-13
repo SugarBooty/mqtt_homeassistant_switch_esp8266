@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../code/arduino/bedroom_heater_controller_mqtt"
+		},
+		{
+			"name": "bedroom_heater_control_mqtt",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
