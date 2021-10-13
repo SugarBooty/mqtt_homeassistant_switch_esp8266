@@ -38,13 +38,13 @@ void MqttHandler::callback(char *topic, byte *payload, unsigned int length)
         {
             Serial.println("Switching ON");
             digitalWrite(D2, HIGH);
-            client.publish(const_cast<char *>(status_topic.c_str()), "ON");
+            client.publish(status_topic.c_str(), "ON");
         }
         else
         {
             Serial.println("Switching OFF");
             digitalWrite(D2, LOW);
-            client.publish(const_cast<char *>(status_topic.c_str()), "OFF");
+            client.publish(status_topic.c_str(), "OFF");
         }
     }
 
@@ -119,15 +119,15 @@ void MqttHandler::connect()
         {
             Serial.println("connected");
             // Once connected, publish an announcement...
-            client.subscribe( const_cast<char *>(command_topic.c_str()));
+            client.subscribe( command_topic.c_str());
             for (int x; x > 250; x++) {
                 client.loop();
             }
             String discovery_json = storage.read(DISC_path);
             discovery_json.replace("\n", "");
             // client.publish( const_cast<char *>(discovery_topic.c_str()), const_cast<char *>(discovery_json.c_str()) );   // limited to 256 bytes including header
-            client.beginPublish(const_cast<char *>(discovery_topic.c_str()), discovery_json.length(), false);
-            client.print(const_cast<char *>(discovery_json.c_str()));
+            client.beginPublish(discovery_topic.c_str(), discovery_json.length(), false);
+            client.print(discovery_json.c_str());
             client.endPublish();
         }
         else
