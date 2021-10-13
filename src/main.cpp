@@ -9,6 +9,7 @@
 
 /*##################################################################################
     //TODO add support for multiple device topics using JSON
+    this branch is for that
     {
         temp: {
             ~: homeassistant/sensor/sensorBedroomT
