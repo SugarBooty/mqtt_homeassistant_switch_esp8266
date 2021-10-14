@@ -7,6 +7,8 @@
 #include <PubSubClient.h>
 #include <MqttHandler.hpp>
 
+#include <HassDeviceManager.hpp>
+
 /*##################################################################################
     //TODO add support for multiple device topics using JSON
     this branch is for that

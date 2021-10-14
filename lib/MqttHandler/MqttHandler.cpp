@@ -140,6 +140,10 @@ void MqttHandler::connect()
         }
     }
 }
+
+void MqttHandler::publish(const char* topic, const char* payload, const bool retain){
+    client.publish(topic, payload, retain);
+}
 /*
 this is the loop run in the loop to ensure MQTT is connected and to process commands sent to the command topic
 */

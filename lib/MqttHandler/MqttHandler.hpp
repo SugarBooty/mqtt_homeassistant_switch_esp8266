@@ -1,3 +1,4 @@
+#pragma once
 #include <Arduino.h>
 #include <IPAddress.h>
 #include <ArduinoJson.h>
@@ -21,4 +22,6 @@ class MqttHandler {
         void connect();
         // loop for updating
         void loop();
+        // sends data to the specified topic
+        void publish(const char* topic, const char* payload, const bool retain);
 };
