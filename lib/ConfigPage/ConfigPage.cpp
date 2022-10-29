@@ -90,9 +90,9 @@ void ConfigPage::setup_router() {
         if ( storage.exists( CON_SSID_path) ){
           output_json.add_string("CON_SSID", storage.read(CON_SSID_path));
         }
-        if ( storage.exists( CON_PWD_path) ){
-          output_json.add_string("CON_PWD", storage.read(CON_PWD_path));
-        }
+        // if ( storage.exists( CON_PWD_path) ){
+        //   output_json.add_string("CON_PWD", storage.read(CON_PWD_path));
+        // }
         if ( storage.exists( MQTT_IP_path) ){
           output_json.add_string("MQTT_IP", storage.read(MQTT_IP_path));
         }
@@ -127,5 +127,6 @@ void ConfigPage::loop() {
   // stay in this class until reboot
     while (true) {
       dnsServer.processNextRequest();
+      yield();
     }
 }

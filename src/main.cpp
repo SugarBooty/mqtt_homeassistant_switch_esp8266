@@ -33,8 +33,8 @@ const char *MQTT_IP_path     = "/conf/MQTT_IP";
 const char *MQTT_PORT_path   = "/conf/MQTT_PORT";
 const char *DISC_path        = "/conf/DISC";
 
-const uint8_t SETUP_BUTTON   = D1; // setup button pin D1
-const uint8_t HEATER_PIN     = D2; // heater pin D2
+const uint8_t SETUP_BUTTON   = D2; // setup button pin D1
+const uint8_t HEATER_PIN     = D1; // heater pin D2
 
 PersistentStorage storage;
 WifiHandler wifi;
@@ -46,7 +46,7 @@ void setup() {
     delay(1000);
     //init and set heater pin low
     pinMode(HEATER_PIN, OUTPUT);
-    digitalWrite(HEATER_PIN, LOW);
+    digitalWrite(HEATER_PIN, HIGH);
 
     Serial.begin(115200);
     pinMode(SETUP_BUTTON, INPUT_PULLUP);
@@ -70,4 +70,5 @@ void setup() {
 void loop() {
     wifi.status_loop();
     mqtt_handler.loop();
+    yield();
 }
