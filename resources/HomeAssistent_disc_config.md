@@ -1,6 +1,6 @@
 ~: homeassistent/bedroom/heaterswitch
-uniq_id: dan_bedroom_heater
-name: "Bedroom Heater"
+uniq_id: floor_heater
+name: "Radiant Heater"
 cmd_t: ~/set
 payload_on: "ON"
 payload_off: "OFF"
@@ -25,11 +25,11 @@ current:
     qos: 1
 
 {
-    "~":"homeassistant/switch/dan_bedroom_heater",
+    "~":"homeassistant/switch/radiant_heater",
     "cmd_t":"~/set",
     "stat_t":"~/get",
-    "uniq_id":"dan_bedroom_heater",
-    "name":"Heater",
+    "uniq_id":"floor_heater",
+    "name":"Radiant Heater",
     "optimistic":"false",
     "retain":"true"
 }

@@ -15,3 +15,24 @@ x    state_off: "OFF"
 x    optimistic: false
     qos: 0
     retain: true
+
+
+discovery topic: home/sensor/sensorZDBedroomT/config
+discovery topic: home/sensor/sensorZDBedroomH/config
+
+sensor_t:
+  name: "ZD Temp"
+  stat_t: "home/zdbedroom/temp1"
+  unit_of_meas: "°"
+  val_tpl: "{{ value_json.t }}"
+
+sensor_t:
+  { "device_class": "temperature","name": "ZD Temp","stat_t": "home/zdbedroom/temp1","unit_of_meas": "°","val_tpl": "{{ value_json.t }}" }
+
+sensor_h:
+  name: "ZD Humidity"
+  stat_t: "home/zdbedroom/temp1"
+  unit_of_meas: "%"
+  val_tpl: "{{ value_json.h }}"
+
+  { "device_class": "humidity","name": "ZD Humidity","stat_t": "home/zdbedroom/temp1","unit_of_meas": "%","val_tpl": "{{ value_json.h }}" }

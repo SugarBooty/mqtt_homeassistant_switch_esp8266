@@ -9,7 +9,7 @@ void WifiHandler::begin(String SSID, String PWD){
         delay(250);
         Serial.print(".");
         connection_length += 1;
-        if ( connection_length > 40 ) {
+        if ( connection_length > 400 ) {
             ESP.restart();
         }
     }

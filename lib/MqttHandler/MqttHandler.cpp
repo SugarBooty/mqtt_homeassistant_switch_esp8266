@@ -37,13 +37,13 @@ void MqttHandler::callback(char *topic, byte *payload, unsigned int length)
         // TODO Figure out a way to use HEATER_PIN instead of D2
         {
             Serial.println("Switching ON");
-            digitalWrite(D2, HIGH);
+            digitalWrite(D1, HIGH);
             client.publish(status_topic.c_str(), "ON");
         }
         else
         {
             Serial.println("Switching OFF");
-            digitalWrite(D2, LOW);
+            digitalWrite(D1, LOW);
             client.publish(status_topic.c_str(), "OFF");
         }
     }
